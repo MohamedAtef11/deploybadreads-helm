@@ -1,0 +1,4 @@
+backend:
+  namespace: prod
+frontend:
+  namespace: prod

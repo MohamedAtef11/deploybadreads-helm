@@ -1,0 +1,4 @@
+backend:
+  namespace: test
+frontend:
+  namespace: test

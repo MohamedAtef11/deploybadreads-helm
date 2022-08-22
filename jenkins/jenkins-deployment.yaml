@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jenkins-master
+  name: jenkins
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jenkins-master
+  template:
+    metadata:
+      labels:
+        app: jenkins-master
+    spec:
+      securityContext:
+        fsGroup: 1000 
+        runAsUser: 0
+      containers:
+      - image: jenkins/jenkins
+        imagePullPolicy: IfNotPresent
+        name: jenkins
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        - containerPort: 50000
+          protocol: TCP
+        volumeMounts:
+        - mountPath: /var/run
+          name: docker-sock
+        - name: jenkins-home-volume
+          mountPath: "/var/jenkins_home"
+      # dnsPolicy: ClusterFirst
+      # hostNetwork: true
+      restartPolicy: Always
+      volumes:
+      - hostPath:
+          path: /var/run
+          type: ""
+        name: docker-sock
+      - name: jenkins-home-volume
+        persistentVolumeClaim:
+          claimName: jenkins-home-pvc 

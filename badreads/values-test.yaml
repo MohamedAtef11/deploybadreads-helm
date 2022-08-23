@@ -1,6 +1,0 @@
-backend:
-  namespace: test
-frontend:
-  namespace: test
-frontendservice:
-  nodePort: 30010

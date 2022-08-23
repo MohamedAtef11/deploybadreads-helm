@@ -1,6 +1,0 @@
-backend:
-  namespace: preprod
-frontend:
-  namespace: preprod
-frontendservice:
-  nodePort: 30011

@@ -1,6 +1,0 @@
-backend:
-  namespace: dev
-frontend:
-  namespace: dev
-frontendservice:
-  nodePort: 30009

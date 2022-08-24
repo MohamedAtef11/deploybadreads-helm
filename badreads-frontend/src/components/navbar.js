@@ -91,7 +91,7 @@ class NavBar extends Component {
                     <img src="/images/logo.png" alt="" id="small-logo"/>
                     <img src="images/badreads.png" alt="" id="large-logo"/>
                     </Link>
-                    <h4>A Community<br/>For Book Haters</h4>
+                    <h4>A Community<br/>For Book Haters <br/> DEV stage</h4>
                     
                 </div>
             
